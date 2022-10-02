@@ -4,8 +4,6 @@ const app = require("./app");
 //   "mongodb+srv://annka:PJVJcXm7zxhpChQI@cluster0.yxgnpsb.mongodb.net/db-contacts?retryWrites=true&w=majority";
 
 const { DB_HOST, PORT = 3000 } = process.env;
-console.log(DB_HOST);
-console.log(PORT);
 
 mongoose
   .connect(DB_HOST)
