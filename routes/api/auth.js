@@ -2,10 +2,12 @@ const express = require("express");
 
 const router = express.Router();
 
-const { validation, ctrlWrapper } = require("../../middlewares");
+const { validation, ctrlWrapper, authenticate } = require("../../middlewares");
 
 const { schemas } = require("../../models/user");
 const { auth: ctrl } = require("../../controllers");
+
+router.get("/current", authenticate, ctrlWrapper(ctrl.getCurrent));
 
 router.post(
   "/signup",
@@ -19,4 +21,5 @@ router.post(
   ctrlWrapper(ctrl.login)
 );
 
+router.get("/logout", authenticate, ctrlWrapper(ctrl.logout));
 module.exports = router;

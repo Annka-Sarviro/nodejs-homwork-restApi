@@ -17,9 +17,9 @@ const register = async (req, res) => {
     subscription,
     token,
   });
+
   res.status(201).json({
     status: "201 Created",
-    // contentType: application/json,
     user: {
       email: newUser.email,
       subscription: newUser.subscription,
