@@ -19,6 +19,7 @@ const updateAvatar = async (req, res) => {
       .writeAsync(tempUpload);
 
     const extention = originalname.split(".").pop();
+
     const filename = `${_id}.${extention}`;
     const resultUpload = path.join(avatarDir, filename);
     await fs.rename(tempUpload, resultUpload);
