@@ -44,7 +44,11 @@ const updateFavoriteJoiSchema = Joi.object({
   }),
 });
 
-const schemas = { addJoiSchema, updateFavoriteJoiSchema };
+const verifyEmailSchema = Joi.object({
+  email: Joi.string().required(),
+});
+
+const schemas = { addJoiSchema, updateFavoriteJoiSchema, verifyEmailSchema };
 
 const Contact = model("contact", contactSchema);
 
